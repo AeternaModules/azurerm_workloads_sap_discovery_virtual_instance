@@ -26,7 +26,7 @@ EOT
     resource_group_name                   = string
     sap_product                           = string
     managed_resource_group_name           = optional(string)
-    managed_resources_network_access_type = optional(string) # Default: "Public"
+    managed_resources_network_access_type = optional(string)
     managed_storage_account_name          = optional(string)
     tags                                  = optional(map(string))
     identity = optional(object({
