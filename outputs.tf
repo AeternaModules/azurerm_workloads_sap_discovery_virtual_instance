@@ -12,7 +12,7 @@ output "workloads_sap_discovery_virtual_instances_environment" {
 }
 output "workloads_sap_discovery_virtual_instances_identity" {
   description = "Map of identity values across all workloads_sap_discovery_virtual_instances, keyed the same as var.workloads_sap_discovery_virtual_instances"
-  value       = { for k, v in azurerm_workloads_sap_discovery_virtual_instance.workloads_sap_discovery_virtual_instances : k => v.identity if v.identity != null && length(v.identity) > 0 }
+  value       = { for k, v in azurerm_workloads_sap_discovery_virtual_instance.workloads_sap_discovery_virtual_instances : k => one(v.identity) if v.identity != null && length(v.identity) > 0 }
 }
 output "workloads_sap_discovery_virtual_instances_location" {
   description = "Map of location values across all workloads_sap_discovery_virtual_instances, keyed the same as var.workloads_sap_discovery_virtual_instances"
